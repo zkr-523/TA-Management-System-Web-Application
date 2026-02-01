@@ -1,0 +1,436 @@
+/* Theme styles */
+.light-theme {
+  --bg-color: #f8f9fa;
+  --text-color: #212529;
+  --card-bg: #ffffff;
+  --border-color: #dee2e6;
+  --primary-color: #4bbf9c;
+  --primary-dark: #3da88a;
+  --secondary-color: #343a40;
+  --light-gray: #f8f9fa;
+  --white: #ffffff;
+}
+
+.dark-theme {
+  --bg-color: #212529;
+  --text-color: #f8f9fa;
+  --card-bg: #343a40;
+  --border-color: #495057;
+  --primary-color: #4bbf9c;
+  --primary-dark: #3da88a;
+  --secondary-color: #6c757d;
+  --light-gray: #343a40;
+  --white: #212529;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background-color: var(--bg-color, #f8f9fa);
+  color: var(--text-color, #212529);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.custom-nav {
+  background: linear-gradient(135deg, #4bbf9c 0%, #217e9c 100%);
+}
+
+/* Enhanced card styling */
+.card {
+  background-color: var(--card-bg, #ffffff);
+  border-color: var(--border-color, #dee2e6);
+  border-radius: 15px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Dashboard stat cards */
+.stats-card {
+  padding: 20px;
+  position: relative;
+  height: 180px;
+  margin-bottom: 20px;
+  text-align: center; /* Center the content */
+}
+
+.stats-card h5 {
+  font-weight: 600;
+  margin-bottom: -15px;
+  padding-left: 35px; /* Space for icon */
+  text-align: left; /* Keep the title left-aligned */
+}
+
+.stats-card .display-4 {
+  font-size: 4.5rem; /* Larger font size */
+  font-weight: 700;
+  margin: 15px 0 30px; /* More space below */
+}
+
+.stats-card a {
+  position: absolute;
+  bottom: 20px;
+  right: 20px; /* Changed from left to right */
+  text-decoration: none;
+  padding: 5px 15px;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.stats-card a:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.stats-card .card-icon {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 1.5rem;
+}
+
+/* Courses card (Cyan) */
+.courses-card {
+  background: linear-gradient(135deg, #13c2c2 0%, #08979c 100%);
+  color: white;
+}
+
+/* TA card (Red) */
+.tas-card {
+  background: linear-gradient(135deg, #f5222d 0%, #cf1322 100%);
+  color: white;
+}
+
+/* Instructors card (Green) */
+.instructors-card {
+  background: linear-gradient(135deg, #52c41a 0%, #389e0d 100%);
+  color: white;
+}
+
+/* Latest courses table */
+.courses-table {
+  border-radius: 15px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.courses-table .table {
+  margin-bottom: 0;
+}
+
+.courses-table .card-header {
+  padding: 15px 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: #f8f9fa;
+}
+
+.courses-table .card-header h5 {
+  margin-bottom: 0;
+  font-weight: 600;
+  padding-left: 10px; /* Add padding to header text */
+}
+
+/* Footer styling for the table */
+.courses-table .card-footer {
+  background-color: #f8f9fa; /* Light gray background */
+  border-top: 1px solid #e9ecef; /* Add a subtle top border */
+  text-align: center;
+  padding: 15px;
+  position: relative;
+  margin-top: 0; /* Remove any top margin */
+}
+
+/* View All Courses button styling */
+.view-all-button {
+  position: relative; /* Change from absolute to relative */
+  transform: none; /* Remove the transform */
+  left: auto; /* Remove the left positioning */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30px;
+  padding: 8px 25px;
+  font-weight: 500;
+  background-color: white;
+  border: 1px solid #dee2e6;
+  transition: all 0.3s ease;
+  gap: 8px; /* Space between icon and text */
+}
+
+.view-all-button:hover {
+  background-color: #eaecef;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Table styling */
+.table {
+  color: var(--text-color, #212529);
+}
+
+.courses-table .table th,
+.courses-table .table td {
+  padding: 12px 15px; /* Increased padding on all sides */
+  vertical-align: middle;
+}
+
+.courses-table .table th:first-child,
+.courses-table .table td:first-child {
+  padding-left: 25px; /* Extra padding on the left side of first column */
+}
+
+/* Dark theme table adjustments */
+.dark-theme .table {
+  color: #f8f9fa;
+}
+
+.dark-theme .table-striped > tbody > tr:nth-of-type(odd) > * {
+  color: #f8f9fa;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Action buttons */
+.btn-action {
+  border-radius: 30px;
+  padding: 5px 15px;
+  margin-right: 5px;
+  transition: all 0.3s ease;
+  font-size: 0.875rem;
+}
+
+.btn-action:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-view {
+  background-color: #343a40;
+  color: white;
+}
+
+.btn-edit {
+  background-color: #f5222d;
+  color: white;
+}
+
+.action-buttons-cell {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.btn-view,
+.btn-edit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-width: 80px;
+}
+
+/* Top action buttons */
+.dashboard-header {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-actions .btn {
+  border-radius: 30px;
+  padding: 8px 20px;
+  transition: all 0.3s ease;
+  margin-left: 10px;
+}
+
+.btn-create-course {
+  background-color: #343a40;
+  color: white;
+}
+
+.btn-assign-ta {
+  background-color: #4bbf9c;
+  color: white;
+}
+
+.btn-assign-ta:hover {
+  border: 1px #032118 solid;
+  background-color: rgb(6, 82, 92);
+  color: rgb(255, 255, 255);
+}
+
+.btn-custom {
+  background-color: #4bbf9c;
+  color: white;
+}
+
+.btn-outline-custom {
+  background-color: transparent;
+  border: 2px solid #08979c;
+  color: #08979c;
+  transition: 0.8s;
+}
+
+.btn-outline-custom:hover {
+  background-color: #08979c;
+  border: 1px solid #08979c;
+  color: white;
+}
+
+.btn-custom:hover {
+  border: 1px #032118 solid;
+  background-color: rgb(6, 82, 92);
+  color: rgb(255, 255, 255);
+}
+
+.header-actions .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Login page */
+.login-container {
+  max-width: 400px;
+  margin: 100px auto;
+}
+
+/* Error and success messages */
+.alert {
+  border-radius: 10px;
+}
+
+/* Form styles */
+.form-control:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.25rem rgba(75, 191, 156, 0.25);
+}
+
+/* Form styles */
+.form-select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.25rem rgba(75, 191, 156, 0.25);
+}
+
+.form-select option:hover {
+  background-color: #4bbf9c;
+}
+
+/* User profile section */
+.user-profile {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.user-profile .user-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-right: 1rem;
+}
+
+/* Footer styling */
+.content-wrapper {
+  flex: 1 0 auto;
+}
+
+footer {
+  flex-shrink: 0;
+  background: linear-gradient(135deg, #4bbf9c 0%, #217e9c 100%);
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: auto;
+}
+
+/* Registration page styles */
+.registration-container {
+  width: 800px;
+  max-width: 95%;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  background: white;
+  margin: 80px 0;
+}
+
+.registration-header {
+  text-align: center;
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.registration-header img {
+  height: 80px;
+  margin-bottom: 15px;
+}
+
+.registration-header h2 {
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.registration-body {
+  padding: 30px;
+}
+
+.registration-notes {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.btn-register {
+  background-color: #4bbf9c;
+  border: none;
+  padding: 12px;
+  border-radius: 50px;
+  font-weight: 600;
+  color: white;
+  transition: all 0.3s;
+}
+
+.btn-register:hover {
+  background-color: #3da88a;
+  transform: translateY(-2px);
+}
+
+.btn-back {
+  background-color: transparent;
+  border: 1px solid #6c757d;
+  padding: 12px;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.btn-back:hover {
+  background-color: #f8f9fa;
+}
+
+.required-field::after {
+  content: " *";
+  color: red;
+}
